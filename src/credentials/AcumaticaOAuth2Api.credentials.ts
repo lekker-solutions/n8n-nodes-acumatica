@@ -9,6 +9,8 @@ export class AcumaticaOAuth2Api implements ICredentialType {
     name = 'acumaticaOAuth2Api';
     displayName = 'Acumatica OAuth2 API';
     documentationUrl = 'https://help.acumatica.com/';
+    extends = ['oAuth2Api'];  // ← Fixed: no ?, correct name
+
     properties: INodeProperties[] = [
         {
             displayName: 'Grant Type',
@@ -21,7 +23,7 @@ export class AcumaticaOAuth2Api implements ICredentialType {
             name: 'url',
             type: 'string',
             default: '',
-            placeholder: 'https://yourinstance.acumatica.com',
+            placeholder: 'https://yourinstance.acumatica.com/TenantName',
             description: 'Base URL of your Acumatica instance (including tenant path)',
             required: true,
         },
@@ -47,23 +49,22 @@ export class AcumaticaOAuth2Api implements ICredentialType {
         {
             displayName: 'Authorization URL',
             name: 'authUrl',
-            type: 'string',
+            type: 'hidden',
             default: '={{$credentials.url}}/identity/connect/authorize',
             required: true,
         },
         {
             displayName: 'Access Token URL',
             name: 'accessTokenUrl',
-            type: 'string',
+            type: 'hidden',
             default: '={{$credentials.url}}/identity/connect/token',
             required: true,
         },
         {
             displayName: 'Scope',
             name: 'scope',
-            type: 'string',
+            type: 'hidden',
             default: 'api offline_access',
-            description: 'Scopes: api (REST API access), offline_access (refresh tokens), api:concurrent_access (multiple sessions)',
         },
         {
             displayName: 'Auth URI Query Parameters',
@@ -91,7 +92,7 @@ export class AcumaticaOAuth2Api implements ICredentialType {
     test: ICredentialTestRequest = {
         request: {
             baseURL: '={{$credentials?.url}}',
-            url: '/entity/Default/24.200.001',
+            url: '/entity/Default/25.200.001',
             method: 'GET',
         },
     };
