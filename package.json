@@ -1,6 +1,6 @@
 {
   "name": "n8n-nodes-acumatica",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "n8n community nodes for Acumatica ERP API",
   "license": "MIT",
   "homepage": "https://github.com/lekker-solutions/n8n-nodes-acumatica",
