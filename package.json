@@ -29,11 +29,11 @@
   "n8n": {
     "n8nNodesApiVersion": 1,
     "credentials": [
-      "dist/src/credentials/AcumaticaOAuth2Api.credentials.js"
+      "dist/credentials/AcumaticaOAuth2Api.credentials.js"
     ],
     "nodes": [
-      "dist/src/nodes/ACM_Default_24_200_001/ACM_Default_24_200_001.node.js",
-      "dist/src/nodes/ACM_Default_25_200_001/ACM_Default_25_200_001.node.js"
+      "dist/nodes/ACM_Default_24_200_001/ACM_Default_24_200_001.node.js",
+      "dist/nodes/ACM_Default_25_200_001/ACM_Default_25_200_001.node.js"
     ]
   },
   "devDependencies": {
